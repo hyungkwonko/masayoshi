@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color:red;">
+        Random Keyword Selection
+    </h1>
+
+    <h2>
+        Click on the button to get random elements.
+    </h2>
+
+    <button id="button" onclick="Masayoshi()">
+        click here
+    </button>
+
+    <h3 id="myp" style="font-weight: bold; color: green;">
+    </h3>
+
+    <h3 id="myp2" style="font-weight: bold; color: blue;">
+    </h3>
+
+    <script>
+        let myp1 = document.getElementById('myp');
+        let myp2 = document.getElementById('myp2');
+
+        const domain = ['광고/마케팅', '교육', '금융/보험/핀테크', '게임', '모빌리티/교통', '물류', '부동산/건설', '뷰티/화장품', '블록체인/DeepTech', '소셜미디어/커뮤니티', '여행/레저', '유아/출산', '인사/비즈니스/법률', '제조/하드웨어', '커머스', '콘텐츠/예술', '통신/보안/데이터', '패션', '푸드/농업', '환경/에너지', '홈리빙/펫', '헬스케어/바이오']
+        const keyword = ['a', 'b', 'c', 'd', 'e']
+
+        function getMultipleRandom(arr, num) {
+            const shuffled = [...arr].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
+        function Masayoshi() {
+            myp1.innerHTML = "Selected domain: " + getMultipleRandom(domain, 1);
+            myp2.innerHTML = "Selected keyword: " + getMultipleRandom(keyword, 3);
+        }
+    </script>
+</body>
+
+</html>
